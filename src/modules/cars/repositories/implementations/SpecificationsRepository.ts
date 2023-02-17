@@ -9,8 +9,17 @@ import {
 class SpecificationsRepository implements ISpecificationsRepository {
   private readonly specifications: Specification[];
 
-  constructor() {
+  private static INSTACE: SpecificationsRepository;
+
+  private constructor() {
     this.specifications = [];
+  }
+
+  public static getInstance(): SpecificationsRepository {
+    if (this.INSTACE == null) {
+      this.INSTACE = new SpecificationsRepository();
+    }
+    return this.INSTACE;
   }
 
   create({ description, name }: ICreateSpecificationDTO): void {
