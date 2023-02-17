@@ -43,7 +43,7 @@
           "error",
           "ignorePackages",
           {
-            "ts": "never"
+            "": "never"
           }
         ],
         "import-helpers/order-imports": [
