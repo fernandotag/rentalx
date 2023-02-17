@@ -1,10 +1,10 @@
 import { v4 as uuid } from "uuid";
 
-import { Specification } from "../model/Specification";
+import { Specification } from "../../model/Specification";
 import {
   type ICreateSpecificationDTO,
   type ISpecificationsRepository,
-} from "./ISpecificationsRepository";
+} from "../ISpecificationsRepository";
 
 class SpecificationsRepository implements ISpecificationsRepository {
   private readonly specifications: Specification[];

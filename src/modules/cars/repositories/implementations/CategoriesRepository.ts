@@ -1,10 +1,10 @@
 import { v4 as uuid } from "uuid";
 
-import { Category } from "../model/Category";
+import { Category } from "../../model/Category";
 import {
   type ICreateCategoryDTO,
   type ICategoriesRepository,
-} from "./ICategoriesRepository";
+} from "../ICategoriesRepository";
 
 class CategoriesRepository implements ICategoriesRepository {
   private readonly categories: Category[];
