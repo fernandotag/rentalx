@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 
-import { Specification } from "../../model/Specification";
+import { Specification } from "../../entities/Specification";
 import {
   type ICreateSpecificationDTO,
   type ISpecificationsRepository,
