@@ -25,6 +25,7 @@ class ImportCategoryUseCase {
           categories.push({ name, description });
         })
         .on("end", () => {
+          void fs.promises.unlink(file.path);
           resolve(categories);
         })
         .on("error", (err) => {
@@ -36,7 +37,7 @@ class ImportCategoryUseCase {
   async execute(file: Express.Multer.File): Promise<void> {
     const categories = await this.loadCategories(file);
 
-    categories.map((category) => {
+    categories.forEach((category) => {
       const { name, description } = category;
 
       const categoryAlreadyExists = this.categoriesRepository.findByName(name);
