@@ -1,6 +1,6 @@
 import { container } from "tsyringe";
 
-import { UsersRepository } from "../../modules/accounts/repositories/implementatios/UsersRepository";
+import { UsersRepository } from "../../modules/accounts/repositories/implementations/UsersRepository";
 import { type IUsersRepository } from "../../modules/accounts/repositories/IUsersRepository";
 import { type ICategoriesRepository } from "../../modules/cars/repositories/ICategoriesRepository";
 import { CategoriesRepository } from "../../modules/cars/repositories/implementations/CategoriesRepository";
