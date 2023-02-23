@@ -1,6 +1,7 @@
 import { type Repository } from "typeorm";
 
-import { dataSource } from "../../../../database";
+import { dataSource } from "@database/index";
+
 import { Specification } from "../../entities/Specification";
 import {
   type ICreateSpecificationDTO,

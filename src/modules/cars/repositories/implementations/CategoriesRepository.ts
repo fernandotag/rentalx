@@ -1,6 +1,7 @@
 import { type Repository } from "typeorm";
 
-import { dataSource } from "../../../../database";
+import { dataSource } from "@database/index";
+
 import { Category } from "../../entities/Category";
 import {
   type ICreateCategoryDTO,
