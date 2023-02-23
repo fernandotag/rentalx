@@ -1,12 +1,12 @@
 import { type Repository } from "typeorm";
 
-import { dataSource } from "@database/index";
+import { dataSource } from "@shared/infra/typeorm/index";
 
-import { Category } from "../../entities/Category";
 import {
   type ICreateCategoryDTO,
   type ICategoriesRepository,
-} from "../ICategoriesRepository";
+} from "../../../repositories/ICategoriesRepository";
+import { Category } from "../entities/Category";
 
 class CategoriesRepository implements ICategoriesRepository {
   private readonly repository: Repository<Category>;
