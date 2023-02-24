@@ -12,7 +12,7 @@ export class CreateCars1677189282243 implements MigrationInterface {
             isPrimary: true,
           },
           {
-            name: "string",
+            name: "name",
             type: "varchar",
           },
           {
