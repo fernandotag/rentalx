@@ -2,11 +2,16 @@ import { type Repository } from "typeorm";
 
 import { type ICreateCarDTO } from "@modules/cars/dtos/ICreateCarsDTO";
 import { type ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
+import { dataSource } from "@shared/infra/typeorm";
 
-import { type Car } from "../entities/Car";
+import { Car } from "../entities/Car";
 
 class CarsRepository implements ICarsRepository {
   private readonly repository: Repository<Car>;
+
+  constructor() {
+    this.repository = dataSource.getRepository(Car);
+  }
 
   async create({
     brand,
@@ -32,7 +37,9 @@ class CarsRepository implements ICarsRepository {
     return savedCar;
   }
 
-  findByLicensePlate: (license_plate: string) => Promise<Car | null>;
+  async findByLicensePlate(license_plate: string): Promise<Car | null> {
+    return await this.repository.findOne({ where: { license_plate } });
+  }
 }
 
 export { CarsRepository };

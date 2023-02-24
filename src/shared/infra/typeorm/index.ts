@@ -1,15 +1,6 @@
-import { DataSource } from "typeorm";
+import DataSourceConnection from "./dataSource";
 
-export const dataSource = new DataSource({
-  type: "postgres",
-  host: "127.0.0.1",
-  port: 5432,
-  username: "docker",
-  password: "ignite",
-  database: "rentx",
-  migrations: ["./src/shared/infra/typeorm/migrations/*.ts"],
-  entities: ["./src/modules/**/entities/*.ts"],
-});
+const dataSource = DataSourceConnection("127.0.0.1");
 
 dataSource
   .initialize()
@@ -19,3 +10,5 @@ dataSource
   .catch((err) => {
     console.log(err);
   });
+
+export { dataSource };
