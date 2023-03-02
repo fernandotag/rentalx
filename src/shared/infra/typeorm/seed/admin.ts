@@ -1,9 +1,7 @@
 import { hash } from "bcrypt";
 import { v4 as uuidV4 } from "uuid";
 
-import DataSourceConnection from "../dataSource";
-
-const dataSource = DataSourceConnection("127.0.0.1");
+import { dataSource } from "..";
 
 async function create(): Promise<void> {
   const id = uuidV4();
