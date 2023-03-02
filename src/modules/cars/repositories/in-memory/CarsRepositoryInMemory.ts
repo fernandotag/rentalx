@@ -38,7 +38,7 @@ class CarsRepositoryInMemory implements ICarsRepository {
 
   async findByLicensePlate(license_plate: string): Promise<Car | null> {
     const car = this.cars.find((car) => car.license_plate === license_plate);
-    return car != null ? car : null;
+    return car ?? null;
   }
 
   async findAllAvailable(
@@ -64,7 +64,7 @@ class CarsRepositoryInMemory implements ICarsRepository {
 
   async findById(id: string): Promise<Car | null> {
     const car = this.cars.find((car) => car.id === id);
-    return car != null ? car : null;
+    return car ?? null;
   }
 }
 

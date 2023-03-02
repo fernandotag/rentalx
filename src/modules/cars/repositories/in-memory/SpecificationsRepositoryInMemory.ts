@@ -12,7 +12,7 @@ class SpecificationsRepositoryInMemory implements ISpecificationsRepository {
     const specification = this.specifications.find(
       (specification) => specification.name === name
     );
-    return specification != null ? specification : null;
+    return specification ?? null;
   }
 
   async create({
