@@ -1,0 +1,18 @@
+# ignore .git and .cache folders
+.git
+.cache
+.gitignore
+
+# ignore all markdown files (md) beside all README*.md other than README-secret.md
+*.md
+!README*.md
+
+node_modules
+dist
+tmp
+coverage
+.vscode
+.npmrc
+.dockerignore
+npm-debug.log
+Dockerfile
