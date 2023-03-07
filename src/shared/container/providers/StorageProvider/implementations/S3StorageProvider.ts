@@ -4,7 +4,6 @@ import mime from "mime";
 import { resolve } from "path";
 
 import upload from "@config/upload";
-import { AppError } from "@shared/errors/AppError";
 
 import { type IStorageProvider } from "../IStorageProvider";
 
