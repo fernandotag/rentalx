@@ -1,3 +1,4 @@
+import { join } from "path";
 import { DataSource } from "typeorm";
 
 const dataSource = new DataSource({
@@ -9,8 +10,8 @@ const dataSource = new DataSource({
   database: process.env.NODE_ENV === "test" ? "rentx_test" : "rentx",
   synchronize: false,
   logging: false,
-  migrations: ["./src/shared/infra/typeorm/migrations/*.ts"],
-  entities: ["./src/modules/**/entities/*.ts"],
+  migrations: [join(__dirname, "/migrations/*.{ts,js}")],
+  entities: [join(__dirname, "../../../modules/**/entities/*.{ts,js}")],
   subscribers: [],
 });
 
