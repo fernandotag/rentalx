@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import "dotenv/config";
 import express, {
+  type RequestHandler,
   type NextFunction,
   type Request,
   type Response,
@@ -12,11 +13,14 @@ import upload from "@config/upload";
 import { AppError } from "@shared/errors/AppError";
 
 import swaggerFile from "../../../swagger.json";
+import rateLimiter from "./middlewares/rateLimiter";
 import { router } from "./routes";
 
 import "@shared/container";
 
 const app = express();
+
+app.use(rateLimiter as RequestHandler);
 
 app.use(express.json());
 
